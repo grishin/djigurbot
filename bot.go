@@ -40,8 +40,8 @@ func main() {
 		} else if strings.Contains(message.Text, "Тост!") {
 			randomToast := toasts[rand.Intn(len(toasts))]
 			bot.SendMessage(message.Chat, randomToast.Text, nil)
-		} else if message.Text == "Костя!" {
-			bot.SendMessage(message.Chat, "Костя занят, он на речном!", nil)
+			/*} else if message.Text == "Костя!" {
+			bot.SendMessage(message.Chat, "Костя занят, он на речном!", nil) */
 		} else if strings.Contains(message.Text, "Твоя!") {
 			bot.SendMessage(message.Chat, "Нееееет, твоя!", nil)
 		} else if strings.Contains(message.Text, "крутой") {
