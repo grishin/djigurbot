@@ -40,13 +40,31 @@ func main() {
 		} else if strings.Contains(message.Text, "Тост!") {
 			randomToast := toasts[rand.Intn(len(toasts))]
 			bot.SendMessage(message.Chat, randomToast.Text, nil)
-			/*} else if message.Text == "Костя!" {
-			bot.SendMessage(message.Chat, "Костя занят, он на речном!", nil) */
-		} else if strings.Contains(message.Text, "Твоя!") {
+		} else if strings.Contains(strings.ToLower(message.Text), "костя") {
+			bot.SendMessage(message.Chat, "Костя крутой!", nil)
+		} else if strings.Contains(strings.ToLower(message.Text), "твоя!") {
 			bot.SendMessage(message.Chat, "Нееееет, твоя!", nil)
-		} else if strings.Contains(message.Text, "крутой") {
+		} else if strings.Contains(strings.ToLower(message.Text), "крутой") {
 			bot.SendMessage(message.Chat, "Нееееет, "+message.Sender.FirstName+", это ты крутой!", nil)
+		} else if strings.Contains(strings.ToLower(message.Text), "сокиабле") {
+			bot.SendMessage(message.Chat, "Сокиабле? ЧОБЛЯ?", nil)
+		} else if strings.Contains(strings.ToLower(message.Text), "доброе утро") {
+			bot.SendMessage(message.Chat, "И тебе наидобрейшего утра, "+message.Sender.FirstName+"!", nil)
+		} else if strings.Contains(strings.ToLower(message.Text), "поздравляй!") {
+			bot.SendMessage(message.Chat, `С 8 марта поздравляем вас, коллеги,
+От души хотим вам пожелать,
+Чтоб совместные победы и успехи
+Дали нам возможность процветать!
+Чтоб в делах житейских и в работе
+Находить умели компромисс,
+Одевались по последней моде,
+Были леди, то бишь миссис или мисс.
+Чтобы было нам в кого влюбляться,
+Чтобы было нас кому любить,
+Молодыми вечно оставаться
+и насыщенной веселой жизнью жить!`, nil)
 		}
+
 	}
 }
 
